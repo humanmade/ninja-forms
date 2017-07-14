@@ -1,5 +1,5 @@
 <script id="tmpl-nf-field-listselect" type="text/template">
-    <select id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element" {{{ data.renderOtherAttributes() }}}>
+    <select id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" aria-describedby="nf-error-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element" {{{ data.renderOtherAttributes() }}}>
         {{{ data.renderOptions() }}}
     </select>
     <div for="nf-field-{{{ data.id }}}"></div>

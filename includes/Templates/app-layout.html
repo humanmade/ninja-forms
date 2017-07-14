@@ -1,8 +1,8 @@
 <script id="tmpl-nf-layout" type="text/template">
-	<span class="nf-form-title">
+	<span id="nf-form-title-{{{ data.id }}}" class="nf-form-title">
 		<h3>{{{ ( 1 == data.settings.show_title ) ? data.settings.title : '' }}}</h3>
 	</span>
-	<div class="nf-form-wrap ninja-forms-form-wrap" aria-live="polite">
+	<div class="nf-form-wrap ninja-forms-form-wrap" aria-live="polite" aria-labelledby="nf-form-title-{{{ data.id }}}" aria-describedby="nf-form-errors-{{{ data.id }}}" role="form">
 		<div class="nf-response-msg"></div>
 		<div class="nf-debug-msg"></div>
 		<div class="nf-before-form"></div>
