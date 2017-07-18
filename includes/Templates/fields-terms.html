@@ -1,5 +1,5 @@
 <script id="tmpl-nf-field-terms" type="text/template">
-    <ul>
+    <ul aria-describedby="nf-error-{{{ data.id }}}">
         {{{ data.renderOptions() }}}
         <# if( ( 'undefined' != typeof add_new_terms ) && add_new_terms ) { #>
         <li>

@@ -1,6 +1,6 @@
 <script id="tmpl-nf-field-file" type="text/template">
     <button type="button" class="nf-file-button nf-element">{{{ data.label }}}</button>
-    <table class="nf-files-table" aria-live="polite">
+    <table class="nf-files-table" role="presentation">
         <tbody></tbody>
     </table>
     {{{ data.renderFileInput() }}}
@@ -9,7 +9,7 @@
 <script id="tmpl-nf-field-file-row" type="text/template">
     <tr>
         <td>{{{ data.filename }}}</td>
-        <td class="nf-file-progress" role="progressbar">
+        <td class="nf-file-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
             <div class="nf-file-bar"></div>
             <div class="nf-file-percent">0%</div>
         </td>
@@ -22,5 +22,5 @@
 </script>
 
 <script id="tmpl-nf-field-file-input" type="text/template">
-    <input id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" aria-describedby="nf-error-{{{ data.id }}}" class="{{{ data.classes }}} nf-element" type="file" style="display:block;" multiple="multiple">
+    <input id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" aria-invalid="false" aria-describedby="nf-error-{{{ data.id }}}" class="{{{ data.classes }}} nf-element" type="file" style="display:block;" multiple="multiple">
 </script>

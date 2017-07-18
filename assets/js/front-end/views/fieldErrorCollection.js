@@ -12,10 +12,12 @@ define( ['views/fieldErrorItem'], function( fieldErrorItem ) {
                 this.fieldModel.removeWrapperClass( 'nf-error' );
                 this.fieldModel.removeWrapperClass( 'nf-fail' );
                 this.fieldModel.addWrapperClass( 'nf-pass' );
+                this.fieldModel.setInvalid( false );
             } else {
                 this.fieldModel.removeWrapperClass( 'nf-pass' );
                 this.fieldModel.addWrapperClass( 'nf-fail' );
                 this.fieldModel.addWrapperClass( 'nf-error' );
+                this.fieldModel.setInvalid( true );
             }
 
 		}

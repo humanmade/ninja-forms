@@ -6,6 +6,7 @@ define( [], function() {
     		this.listenTo( this.model, 'reRender', this.render, this );
     		this.listenTo( this.model, 'change:addWrapperClass', this.addWrapperClass, this );
     		this.listenTo( this.model, 'change:removeWrapperClass', this.removeWrapperClass, this );
+    		this.listenTo( this.model, 'change:invalid', this.toggleAriaInvalid, this );
 
     		this.template = '#tmpl-nf-field-' + this.model.get( 'wrap_template' );
 		},
@@ -28,6 +29,11 @@ define( [], function() {
 				jQuery( this.el ).removeClass( cl );
 				this.model.set( 'removeWrapperClass', '' );
 			}
+		},
+
+		toggleAriaInvalid: function() {
+			var invalid = this.model.get( 'invalid' );
+			jQuery( '[aria-invalid]', this.el ).attr( 'aria-invalid', JSON.stringify( invalid ) );
 		},
 
 		onRender: function() {

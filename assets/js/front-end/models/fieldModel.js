@@ -10,7 +10,8 @@ define( ['models/fieldErrorCollection'], function( fieldErrorCollection ) {
 			confirm_field: false,
 			clean: true,
 			disabled: '',
-			visible: true
+			visible: true,
+			invalid: false
 		},
 
 		initialize: function() {
@@ -66,6 +67,10 @@ define( ['models/fieldErrorCollection'], function( fieldErrorCollection ) {
 
 		removeWrapperClass: function( cl ) {
 			this.set( 'removeWrapperClass', cl );
+		},
+
+		setInvalid: function( invalid ) {
+			this.set( 'invalid', invalid );
 		},
 
 		formLoaded: function() {
