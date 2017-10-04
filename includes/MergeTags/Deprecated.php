@@ -29,7 +29,10 @@ final class NF_MergeTags_Deprecated extends NF_Abstracts_MergeTags
     {
         global $post;
 
-        $this->setup_post_meta( $this->post_id() );
+        $post_id = $this->post_id();
+        if ( ! empty( $post_id ) ) {
+            $this->setup_post_meta( $post_id );
+        }
     }
 
     protected function post_id()
